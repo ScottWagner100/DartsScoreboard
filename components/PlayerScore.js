@@ -8,9 +8,19 @@ import {
 import styles from "../globalStyles";
 import { Ionicons, Feather, AntDesign } from '@expo/vector-icons';
 
-export default function PlayerScore({playerNumber, score}) {
+export default function PlayerScore({playerNumber, score, setScore}) {
 
     const [modalVisible, setModalVisible] = useState(false);
+    const [enteredValue, setEnteredValue] = useState();
+
+    const enterValueHandler = (value) => {
+        setEnteredValue(value);
+        console.log("Entered Value " + enteredValue);
+    }
+
+    const singleHandler = () => {
+        setScore(score - enteredValue);
+    }
 
     return (
         <View>
@@ -54,6 +64,7 @@ export default function PlayerScore({playerNumber, score}) {
                         style={styles.modalTextInput}
                         placeholder={""}
                         keyboardType={"numeric"}
+                        onChangeText={enterValueHandler}
                         />
                        <TouchableOpacity
                             onPress={() => {
@@ -72,6 +83,7 @@ export default function PlayerScore({playerNumber, score}) {
                         <View style={styles.multiplierBox}>
                         <TouchableOpacity
                             onPress={() => {
+                                singleHandler();
                                 console.log("Single Selected");
                             }}
                         >

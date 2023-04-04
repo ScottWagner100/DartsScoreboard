@@ -19,10 +19,12 @@ export default function MainBody() {
             <PlayerScore
                 playerNumber={playerName[0].name}
                 score={playerOneScore}
+                setScore={playerOneSetScore}
             />
             <PlayerScore
                 playerNumber={playerName[1].name}
                 score={playerTwoScore}
+                setScore={playerTwoSetScore}
             />
         </View>
     ) // return
