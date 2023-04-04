@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Text, TouchableHighlight, TouchableNativeFeedback, TouchableOpacity, View} from "react-native";
 import styles from "../globalStyles";
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, Feather } from '@expo/vector-icons';
 
 export default function PlayerScore({playerNumber}) {
 
@@ -9,7 +9,14 @@ export default function PlayerScore({playerNumber}) {
 
     return (
         <View style={styles.playerBox}>
+            <View style={styles.playerNameBox}>
             <Text style={styles.playerText}>Player {playerNumber}</Text>
+            <Feather
+                name="edit-2"
+                size={10}
+                style={styles.playerNameEdit}
+            />
+            </View>
             <Text style={styles.playerScoreText}>{score}</Text>
             <View style={styles.playerBoxButton}>
                 <TouchableHighlight>

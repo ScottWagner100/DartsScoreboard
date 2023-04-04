@@ -58,7 +58,8 @@ const styles = StyleSheet.create({
         textAlign: "center",
         textShadowColor: 'rgba(0, 0, 0, 0.75)',
         textShadowOffset: {width: -1, height: 1},
-        textShadowRadius: 10
+        textShadowRadius: 10,
+        left: -10,
     },
     playerBoxAdd: {
         marginRight: 15,
@@ -69,6 +70,16 @@ const styles = StyleSheet.create({
         textShadowRadius: 10,
         marginTop: 15,
         fontSize: 35,
+    },
+    playerNameEdit: {
+      color: "#fff",
+        padding: 0,
+        margin: 0,
+        right: -5,
+    },
+    playerNameBox: {
+        flexDirection: "row",
+        justifyContent: "space-between",
     }
 });
 
