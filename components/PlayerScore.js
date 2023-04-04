@@ -33,7 +33,7 @@ export default function PlayerScore({playerNumber, score}) {
             </View>
             <View>
                 <Modal
-                    visible={true}
+                    visible={modalVisible}
                     transparent={true}
                 >
                     <View style={styles.modalScoreBox}>
@@ -44,6 +44,10 @@ export default function PlayerScore({playerNumber, score}) {
                                 size={24}
                                 color="black"
                                 style={styles.modalExit}
+                                onPress={() => {
+                                    setModalVisible(false);
+                                    console.log("Modal Exit")
+                                }}
                             />
                         </View>
                         <TextInput
