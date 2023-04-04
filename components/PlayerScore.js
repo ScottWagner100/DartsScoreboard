@@ -1,6 +1,7 @@
 import React, {useState} from "react";
-import {Button, Text, View} from "react-native";
+import {Text, TouchableHighlight, TouchableNativeFeedback, TouchableOpacity, View} from "react-native";
 import styles from "../globalStyles";
+import { Ionicons } from '@expo/vector-icons';
 
 export default function PlayerScore({playerNumber}) {
 
@@ -10,9 +11,17 @@ export default function PlayerScore({playerNumber}) {
         <View style={styles.playerBox}>
             <Text style={styles.playerText}>Player {playerNumber}</Text>
             <Text style={styles.playerScoreText}>{score}</Text>
-            <Button title={"Button"} onPress={() => {
-                setScore(score - 5);
-            }} />
+            <View style={styles.playerBoxButton}>
+                <TouchableHighlight>
+                <Ionicons name="add-circle-outline"
+                          style={styles.playerBoxAdd}
+                          size={24}
+                          color="black"
+                          onPress={() => {
+                    setScore(score - 5);
+                }} />
+                </TouchableHighlight>
+            </View>
         </View>
     ) // return
 } // PlayerScore

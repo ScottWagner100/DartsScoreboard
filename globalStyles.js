@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     mainHeaderContainer: {
-         backgroundColor: "#2f3030",
+         backgroundColor: "#222423",
          height: 100,
          paddingTop: 55,
          alignItems: "center",
@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
         backgroundColor: "#2bad4e",
         marginVertical: 0,
         marginTop: 0,
-        justifyContent: "space-between",
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.8,
@@ -36,6 +35,9 @@ const styles = StyleSheet.create({
         borderStyle: "dashed",
         borderWidth: .5,
         borderColor: "#2f3030",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        padding: 25,
     },
     playerText: {
         color: "#fff",
@@ -45,7 +47,8 @@ const styles = StyleSheet.create({
         textShadowColor: 'rgba(0, 0, 0, 0.75)',
         textShadowOffset: {width: -1, height: 1},
         textShadowRadius: 10,
-
+        marginLeft: 8,
+        fontSize: 16,
 },
     playerScoreText: {
         color: "#fff",
@@ -57,6 +60,16 @@ const styles = StyleSheet.create({
         textShadowOffset: {width: -1, height: 1},
         textShadowRadius: 10
     },
+    playerBoxAdd: {
+        marginRight: 15,
+        fontWeight: "bold",
+        color: "#fff",
+        textShadowColor: 'rgba(0, 0, 0, 0.75)',
+        textShadowOffset: {width: -1, height: 1},
+        textShadowRadius: 10,
+        marginTop: 15,
+        fontSize: 35,
+    }
 });
 
 export default styles;
