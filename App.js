@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import {Keyboard, StyleSheet, Text, TouchableWithoutFeedback, View} from 'react-native';
 import styles from "./globalStyles";
+import MainHeader from "./components/mainHeader";
 
 export default function App() {
 
@@ -11,8 +12,8 @@ export default function App() {
 
   return (
       <TouchableWithoutFeedback onPress={touchDismiss}>
-    <View style={styles.container}>
-
+    <View>
+      <MainHeader />
     </View>
       </TouchableWithoutFeedback>
   );
