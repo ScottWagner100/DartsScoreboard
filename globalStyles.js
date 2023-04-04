@@ -82,7 +82,13 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
     },
     modalScoreBox: {
-
+        backgroundColor: "red",
+        flex: .3,
+        justifyContent: "flex-end",
+        width: 335,
+        alignSelf: "center",
+        marginTop: 190,
+        opacity: .95,
     }
 });
 

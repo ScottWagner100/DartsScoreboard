@@ -3,13 +3,17 @@ import {
     Text,
     TouchableHighlight,
     View,
+    Modal,
 } from "react-native";
 import styles from "../globalStyles";
 import { Ionicons, Feather } from '@expo/vector-icons';
 
-export default function PlayerScore({playerNumber, score, setScore}) {
+export default function PlayerScore({playerNumber, score}) {
+
+    const [modalVisible, setModalVisible] = useState(false);
 
     return (
+        <View>
             <View style={styles.playerBox}>
                 <View style={styles.playerNameBox}>
                 <Text style={styles.playerText}>{playerNumber}</Text>
@@ -22,10 +26,21 @@ export default function PlayerScore({playerNumber, score, setScore}) {
                               size={24}
                               color="black"
                               onPress={() => {
-                                  setScore(score - 15);
+                                setModalVisible(!modalVisible)
                     }} />
                     </TouchableHighlight>
                 </View>
             </View>
+            <View>
+                <Modal
+                    visible={true}
+                    transparent={true}
+                >
+                    <View style={styles.modalScoreBox}>
+                        <Text>Hello World</Text>
+                    </View>
+                </Modal>
+            </View>
+        </View>
     ) // return
 } // PlayerScore

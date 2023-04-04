@@ -1,6 +1,8 @@
 import React, {useState} from "react";
-import {View} from "react-native";
+import {Modal, View, Alert, Text} from "react-native";
 import PlayerScore from "./PlayerScore";
+import styles from "../globalStyles";
+
 
 export default function MainBody() {
 
@@ -17,12 +19,10 @@ export default function MainBody() {
             <PlayerScore
                 playerNumber={playerName[0].name}
                 score={playerOneScore}
-                setScore={playerOneSetScore}
             />
             <PlayerScore
                 playerNumber={playerName[1].name}
                 score={playerTwoScore}
-                setScore={playerTwoSetScore}
             />
         </View>
     ) // return

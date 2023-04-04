@@ -1,6 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import {Keyboard, StyleSheet, Text, TouchableWithoutFeedback, View} from 'react-native';
-import styles from "./globalStyles";
+import {Keyboard, TouchableWithoutFeedback, View} from 'react-native';
 import MainHeader from "./components/mainHeader";
 import MainBody from "./components/MainBody";
 
