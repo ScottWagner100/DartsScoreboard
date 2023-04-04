@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     },
     modalScoreBox: {
         backgroundColor: "#222423",
-        flex: .3,
+        flex: .58,
         width: 335,
         alignSelf: "center",
         marginTop: 120,
@@ -94,7 +94,8 @@ const styles = StyleSheet.create({
         shadowRadius: 1,
         borderStyle: "dashed",
         borderWidth: .5,
-        borderColor: "#2f3030",
+        borderColor: "#32a852",
+        borderRadius: 900,
     },
     modalHeader: {
         color: "#fff",
@@ -119,6 +120,30 @@ const styles = StyleSheet.create({
         textAlign: "center",
         borderWidth: 1,
         height: 65,
+        fontWeight: "bold",
+    },
+    bullseye: {
+        color: "red",
+        fontSize: 24,
+        textAlign: "center",
+        marginTop: 15,
+        borderStyle: "dashed",
+        borderWidth: 1,
+        borderColor: "#fff",
+        borderRadius: 100,
+        fontWeight: "bold",
+        height: 40,
+        paddingTop: 3,
+        textShadowColor: "red",
+        textShadowOffset: {width: -1, height: 1},
+        textShadowRadius: 10,
+        shadowColor: "#fff",
+        shadowRadius: 10,
+        shadowOffset: 5,
+    },
+    doubleButton: {
+        color: "#fff",
+
     }
 });
 

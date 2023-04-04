@@ -3,7 +3,7 @@ import {
     Text,
     TouchableHighlight,
     View,
-    Modal, TextInput,
+    Modal, TextInput, Button, TouchableOpacity,
 } from "react-native";
 import styles from "../globalStyles";
 import { Ionicons, Feather } from '@expo/vector-icons';
@@ -40,9 +40,30 @@ export default function PlayerScore({playerNumber, score}) {
                         <Text style={styles.modalHeader}>{playerNumber}</Text>
                         <TextInput
                         style={styles.modalTextInput}
-                        placeholder={"points"}
+                        placeholder={""}
                         keyboardType={"numeric"}
                         />
+                       <TouchableOpacity
+                            onPress={() => {
+                            console.log("Bullseye");
+                            }}
+                       >
+                           <Text style={styles.bullseye}>Bullseye</Text>
+                       </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => {
+                                console.log("Outer Bullseye");
+                            }}
+                        >
+                            <Text style={styles.bullseye}>Outer Bullseye</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => {
+                                console.log("Double Selected");
+                            }}
+                        >
+                            <Text style={styles.doubleButton}>Double</Text>
+                        </TouchableOpacity>
                     </View>
                 </Modal>
             </View>
