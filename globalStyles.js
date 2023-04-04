@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
         shadowRadius: 1,
         borderStyle: "dashed",
         borderWidth: .5,
-        borderColor: "#32a852",
+        borderColor: "#fff",
         borderRadius: 900,
     },
     modalHeader: {
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
         borderColor: "#fff",
         color: "#333",
         alignSelf: "center",
-        marginTop: 30,
+        marginTop: 20,
         fontSize: 30,
         width: 215,
         textAlign: "center",
@@ -139,10 +139,31 @@ const styles = StyleSheet.create({
         textShadowRadius: 10,
         shadowColor: "#fff",
         shadowRadius: 10,
-        shadowOffset: 5,
     },
-    doubleButton: {
+    multiplierBox: {
+        flexDirection: "row",
+        justifyContent: "center",
+    },
+    multiplierButton: {
+        padding: 15,
+        marginLeft: 5,
+        marginRight: 5,
+        marginTop: 30,
+        borderStyle: "dashed",
+        borderWidth: 1,
+        color: "#d45617",
+        fontWeight: "bold",
+        fontSize: 18,
+        borderColor: "#fff",
+        maxWidth: 95,
+        borderRadius: 20,
+    },
+    modalExit: {
+        marginLeft: 240,
         color: "#fff",
+        padding: 0,
+    },
+    modalHeaderBox: {
 
     }
 });

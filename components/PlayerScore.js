@@ -6,7 +6,7 @@ import {
     Modal, TextInput, Button, TouchableOpacity,
 } from "react-native";
 import styles from "../globalStyles";
-import { Ionicons, Feather } from '@expo/vector-icons';
+import { Ionicons, Feather, AntDesign } from '@expo/vector-icons';
 
 export default function PlayerScore({playerNumber, score}) {
 
@@ -37,7 +37,15 @@ export default function PlayerScore({playerNumber, score}) {
                     transparent={true}
                 >
                     <View style={styles.modalScoreBox}>
+                        <View style={styles.modalHeaderBox}>
                         <Text style={styles.modalHeader}>{playerNumber}</Text>
+                            <AntDesign
+                                name="closecircleo"
+                                size={24}
+                                color="black"
+                                style={styles.modalExit}
+                            />
+                        </View>
                         <TextInput
                         style={styles.modalTextInput}
                         placeholder={""}
@@ -57,13 +65,29 @@ export default function PlayerScore({playerNumber, score}) {
                         >
                             <Text style={styles.bullseye}>Outer Bullseye</Text>
                         </TouchableOpacity>
+                        <View style={styles.multiplierBox}>
+                        <TouchableOpacity
+                            onPress={() => {
+                                console.log("Single Selected");
+                            }}
+                        >
+                            <Text style={styles.multiplierButton}>single</Text>
+                        </TouchableOpacity>
                         <TouchableOpacity
                             onPress={() => {
                                 console.log("Double Selected");
                             }}
                         >
-                            <Text style={styles.doubleButton}>Double</Text>
+                            <Text style={styles.multiplierButton}>double</Text>
                         </TouchableOpacity>
+                            <TouchableOpacity
+                                onPress={() => {
+                                    console.log("Triple Selected");
+                                }}
+                            >
+                                <Text style={styles.multiplierButton}>triple</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 </Modal>
             </View>
