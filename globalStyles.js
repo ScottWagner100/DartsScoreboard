@@ -80,6 +80,9 @@ const styles = StyleSheet.create({
     playerNameBox: {
         flexDirection: "row",
         justifyContent: "space-between",
+    },
+    modalScoreBox: {
+
     }
 });
 
