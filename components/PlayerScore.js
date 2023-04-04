@@ -16,11 +16,32 @@ export default function PlayerScore({playerNumber, score, setScore}) {
     const enterValueHandler = (value) => {
         setEnteredValue(value);
         console.log("Entered Value " + enteredValue);
-    }
+    } // enteredValueHandler
 
     const singleHandler = () => {
         setScore(score - enteredValue);
-    }
+        setModalVisible(false);
+    } // singleHandler
+
+    const doubleHandler = () => {
+        setScore(score - (enteredValue * 2));
+        setModalVisible(false);
+    } // doubleHandler
+
+    const tripleHandler = () => {
+        setScore(score - (enteredValue * 3));
+        setModalVisible(false);
+    } // tripleHandler
+
+    const bullseyeHandler = () => {
+        setScore(score - 50);
+        setModalVisible(false);
+    } // bullseyeHandler
+
+    const outerBullseyeHandler = () => {
+        setScore(score - 25);
+        setModalVisible(false);
+    } // outerBullseyeHandler
 
     return (
         <View>
@@ -68,6 +89,7 @@ export default function PlayerScore({playerNumber, score, setScore}) {
                         />
                        <TouchableOpacity
                             onPress={() => {
+                                bullseyeHandler();
                             console.log("Bullseye");
                             }}
                        >
@@ -75,6 +97,7 @@ export default function PlayerScore({playerNumber, score, setScore}) {
                        </TouchableOpacity>
                         <TouchableOpacity
                             onPress={() => {
+                                outerBullseyeHandler();
                                 console.log("Outer Bullseye");
                             }}
                         >
@@ -91,6 +114,7 @@ export default function PlayerScore({playerNumber, score, setScore}) {
                         </TouchableOpacity>
                         <TouchableOpacity
                             onPress={() => {
+                                doubleHandler();
                                 console.log("Double Selected");
                             }}
                         >
@@ -98,6 +122,7 @@ export default function PlayerScore({playerNumber, score, setScore}) {
                         </TouchableOpacity>
                             <TouchableOpacity
                                 onPress={() => {
+                                    tripleHandler();
                                     console.log("Triple Selected");
                                 }}
                             >
