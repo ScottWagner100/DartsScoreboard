@@ -3,7 +3,7 @@ import {
     Text,
     TouchableHighlight,
     View,
-    Modal,
+    Modal, TextInput,
 } from "react-native";
 import styles from "../globalStyles";
 import { Ionicons, Feather } from '@expo/vector-icons';
@@ -37,7 +37,12 @@ export default function PlayerScore({playerNumber, score}) {
                     transparent={true}
                 >
                     <View style={styles.modalScoreBox}>
-                        <Text>Hello World</Text>
+                        <Text style={styles.modalHeader}>{playerNumber}</Text>
+                        <TextInput
+                        style={styles.modalTextInput}
+                        placeholder={"points"}
+                        keyboardType={"numeric"}
+                        />
                     </View>
                 </Modal>
             </View>
