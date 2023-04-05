@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {
     Text,
     TouchableHighlight,
@@ -13,35 +13,57 @@ export default function PlayerScore({playerNumber, score, setScore}) {
     const [modalVisible, setModalVisible] = useState(false);
     const [enteredValue, setEnteredValue] = useState();
 
+    let tempScore = score;
+
     const enterValueHandler = (value) => {
         setEnteredValue(value);
         console.log("Entered Value " + enteredValue);
     } // enteredValueHandler
 
     const singleHandler = () => {
+        tempScore = (score - enteredValue);
         setScore(score - enteredValue);
         setModalVisible(false);
+        checkWin();
     } // singleHandler
 
     const doubleHandler = () => {
+        tempScore = (score - (enteredValue * 2));
         setScore(score - (enteredValue * 2));
         setModalVisible(false);
+        checkWin();
     } // doubleHandler
 
     const tripleHandler = () => {
+        tempScore = (score - (enteredValue * 3));
         setScore(score - (enteredValue * 3));
         setModalVisible(false);
+        checkWin();
     } // tripleHandler
 
     const bullseyeHandler = () => {
+        tempScore = score - 50;
         setScore(score - 50);
         setModalVisible(false);
+        checkWin();
     } // bullseyeHandler
 
     const outerBullseyeHandler = () => {
+        tempScore = score-25;
         setScore(score - 25);
         setModalVisible(false);
+        checkWin();
     } // outerBullseyeHandler
+
+    const checkWin = () => {
+        console.log(tempScore);
+        setEnteredValue(0);
+        if (tempScore == 0) {
+            console.log(playerNumber + " Wins");
+        } else if (tempScore < 0) {
+            console.log(playerNumber + " Bust!")
+        }
+    } // checkWin
 
     return (
         <View>
@@ -66,6 +88,7 @@ export default function PlayerScore({playerNumber, score, setScore}) {
                 <Modal
                     visible={modalVisible}
                     transparent={true}
+                    animationType={"fade"}
                 >
                     <View style={styles.modalScoreBox}>
                         <View style={styles.modalHeaderBox}>
@@ -86,11 +109,12 @@ export default function PlayerScore({playerNumber, score, setScore}) {
                         placeholder={""}
                         keyboardType={"numeric"}
                         onChangeText={enterValueHandler}
+                        autoFocus={true}
                         />
                        <TouchableOpacity
                             onPress={() => {
-                                bullseyeHandler();
                             console.log("Bullseye");
+                                bullseyeHandler();
                             }}
                        >
                            <Text style={styles.bullseye}>Bullseye</Text>
