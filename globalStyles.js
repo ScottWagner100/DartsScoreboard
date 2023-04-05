@@ -10,8 +10,9 @@ const styles = StyleSheet.create({
     mainHeaderContainer: {
          backgroundColor: "#222423",
          height: 100,
-         paddingTop: 55,
-         alignItems: "center",
+         paddingTop: 0,
+        flexDirection: "row-reverse",
+        justifyContent: "space-around",
     },
     mainHeaderText: {
         fontFamily: "Rockwell",
@@ -19,10 +20,13 @@ const styles = StyleSheet.create({
         fontSize: 24,
         textAlign: "center",
         fontWeight: "bold",
-        paddingTop: 10,
+        paddingTop: 60,
         textShadowColor: "#2bad4e",
         textShadowOffset: {width: -1, height: 1},
         textShadowRadius: 10,
+        maxWidth: 300,
+        alignSelf: "center",
+        left: 40,
     },
     playerBox: {
         backgroundColor: "#2bad4e",
@@ -95,7 +99,7 @@ const styles = StyleSheet.create({
         borderStyle: "dashed",
         borderWidth: .5,
         borderColor: "#fff",
-        borderRadius: 900,
+        borderRadius: 80,
     },
     modalHeader: {
         color: "#fff",
@@ -121,6 +125,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         height: 65,
         fontWeight: "bold",
+        borderRadius: 10,
     },
     bullseye: {
         color: "red",
@@ -143,6 +148,10 @@ const styles = StyleSheet.create({
     multiplierBox: {
         flexDirection: "row",
         justifyContent: "center",
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8,
+        shadowRadius: 1,
     },
     multiplierButton: {
         padding: 15,
@@ -157,6 +166,10 @@ const styles = StyleSheet.create({
         borderColor: "#fff",
         maxWidth: 95,
         borderRadius: 20,
+        shadowColor: '#d45617',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8,
+        shadowRadius: 1,
     },
     modalExit: {
         marginLeft: 240,
@@ -165,6 +178,14 @@ const styles = StyleSheet.create({
     },
     modalHeaderBox: {
 
+    },
+    headerMenuIcon: {
+        color: "#fff",
+        left: 10,
+        marginLeft: 0,
+        marginBottom: 0,
+        marginTop: 50,
+        alignSelf: "center",
     }
 });
 
